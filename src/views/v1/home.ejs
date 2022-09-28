@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Welcome to Node Js - Chat App</h1>
+    <p>
+      I am using Socket.io to create a chat app in Nodejs and with MongodDB
+      DataBase.
+    </p>
+    <br />
+    <Small>By Mr Afaq Ahmad</Small>
+  </body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" unsafe-inline>
+    import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
+    const socket = io("http://localhost:9988", {
+      transports: ["websocket", "polling"],
+    });
+    socket.on("connection", (socket) => {
+      console.log(socket);
+    });
+  </script>
+</html>
