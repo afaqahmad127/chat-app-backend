@@ -23,9 +23,6 @@ export default async function expressLoader({ app }) {
 
   // let the app use the assets folder publicist
   app.use(express.static(path.join(__dirname, "../assets")));
-  app.use("/",(req,res)=>{
-    res.render('v1/home')
-  });
   app.use("/api", authenticate);
 
   app.use("/api", v1ProtectedRouter);

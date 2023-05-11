@@ -18,7 +18,7 @@ export class MySocket {
           i.createdAt = date.getTime();
           return i;
         });
-        client.emit("message", JSON.stringify(finalData[0]));
+        client.broadcast.emit("message", JSON.stringify(finalData[0]));
       });
       client.on("disconnect", () => {
         console.log("User disconnected");
